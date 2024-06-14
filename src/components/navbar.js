@@ -38,7 +38,7 @@ export default function navbar({ langs = [] }) {
                         </NavigationMenuContent>
                     </NavigationMenuItem>*/
     return (
-        <div className="fixed top-0 w-screen z-10 bg-black">
+        <div className="dark fixed top-0 w-screen z-10 ">
             <NavigationMenu>
                 <NavigationMenuList>
                     <NavigationMenuItem>
