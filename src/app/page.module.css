@@ -1,0 +1,134 @@
+.navbar {
+  position: fixed;
+  top: 39%;
+  z-index: 5;
+}
+
+.langsubmenu {
+  display: none;
+}
+
+.currentlang,
+.langbtn {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: 0.5s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.currentlang {
+  background-color: #424242;
+}
+
+.langbtn:hover {
+  background-color: #424242;
+  transition: 0.5s;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.langicn {
+  margin-right: 5px;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+}
+
+.dropdownlang {
+  vertical-align: text-bottom;
+  filter: invert(100%);
+}
+
+.langsubmenucontainer:hover,
+.langsubmenu:hover {
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutmeref,
+#projectsmeref,
+#diplomasmeref,
+#contactref {
+    text-decoration: none;
+    color: white;
+}
+
+.reflinks {
+  height: 25%;
+  border-radius: 0px 10px 10px 0px;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-left: 0;
+  transition: 0.5s;
+}
+
+.reflinks:hover {
+  background-color: #424242;
+  transition: 0.5s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.content {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200vh !important;
+}
+
+.section,
+.footer {
+  width: 80vw;
+  margin-left: 10%;
+  text-align: center;
+  height: 110vh;
+}
+
+#refs {
+  list-style: none;
+  padding-left: 0;
+}
+
+#aboutme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.05%;
+}
+
+#aboutme h1 {
+  font-size: 35px;
+}
+
+#aboutme p {
+  font-size: 25px;
+}
+
+.footer {
+  background-color: #323232;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-bottom: 1px;
+  width: 100vw;
+  position: relative;
+  z-index: 10;
+}
+
+.roundedImg {
+  border-radius: 50%;
+}
+
+#arrowDown {
+  border-radius: 50%;
+  padding: 10px;
+  border: 2px white solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
