@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model T_ProgrammingLanguage_PLG {
+  id Int @id @default(autoincrement())
+  name String @unique
+  imglnk String
+
+  T_Project_PRJ T_Project_PRJ[]
+}
+
+model T_Tools_TLS {
+  id Int @id @default(autoincrement())
+  name String @unique
+  lnk String
+  imglnk String
+
+  T_Project_PRJ T_Project_PRJ[]
+}
+
+model T_SearchTag_STG {
+  id Int @id @default(autoincrement())
+  name String @unique
+
+  T_Project_PRJ T_Project_PRJ[]
+}
+
+model T_Project_PRJ {
+  id Int @id @default(autoincrement())
+  plangs T_ProgrammingLanguage_PLG[]
+  tools T_Tools_TLS[]
+  tags T_SearchTag_STG[]
+  internalLink String @unique
+
+  T_Pages_IPG T_Pages_IPG[]
+}
+
+model T_Languages_LNG {
+  id Int @id @default(autoincrement())
+  shortCode String @unique
+  name String
+
+  T_Pages_IPG T_Pages_IPG[]
+
+  T_ProjectPresentation_PPR T_ProjectPresentation_PPR[]
+}
+
+model T_Pages_IPG {
+  id Int @id @default(autoincrement())
+  prj T_Project_PRJ @relation(fields: [prjid], references: [id])
+  prjid Int
+  content String
+  lang T_Languages_LNG @relation(fields: [langid], references: [id])
+  langid Int
+}
+
+model T_ProjectPresentation_PPR {
+  id Int @id @default(autoincrement())
+  name String
+  desc String
+  ilink String
+  scrnlnk String
+  lang T_Languages_LNG @relation(fields: [langid], references: [id])
+  langid Int
+}
+
+model T_Admin_ADM {
+  id Int @id @default(autoincrement())
+  username String
+  password String
+}
