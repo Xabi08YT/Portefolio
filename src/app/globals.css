@@ -66,6 +66,21 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .blurred {
+    background: none;
+    --foreground: 0 0% 0% 0;
+    --background: 0 0% 0% 0;
+  }
+
+  .blurredSurface {
+    backdrop-filter: blur(10px);
+    background: none;
+    --card: none;
+    --accent: none;
+    --accent-foreground: none;
+    --popover: none;
+    --popover-foreground: none;
+  }
 }
 
 @layer base {
@@ -75,4 +90,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bgimg {
+  background-image: url("/bg.jpg");
+}
+
+.pie {
+  color: white !important;
 }
