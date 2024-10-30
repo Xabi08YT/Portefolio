@@ -10,7 +10,7 @@ export default function Home() {
         <div className="dark text-white w-full h-full bgimg">
             <Navbar/>
             <main className="w-[100vw] min-h-[90vh] flex flex-col md:flex-row justify-center">
-                <Card className="w-fit p-[5px] pt-[15px] m-[15px] mt-[5.5vh] blurredSurface rounded-3xl md:justify-center md:content-center">
+                <Card className="w-fit p-[5px] pt-[15px] m-[15px] mt-[5.5vh] blurredSurface rounded-3xl border-0 md:justify-center md:content-center">
                     <CardTitle className="text-center flex flex-col"><Image src="/moi.jpeg" alt="me" width={240}
                                                                             height={50}
                                                                             className="self-center mb-[15px] sm:w-[240px] rounded-3xl"/> A propos
@@ -21,13 +21,13 @@ export default function Home() {
                             cybersécurité.</p>
                     </CardContent>
                     <CardFooter className="font-bold text-center mt-[15px] mb-[5px] text-xl flex flex-col">
-                        <p>Me contacter</p>
+                        <p>Me contacter oui  plus d&apos;informations</p>
                         <Link href="https://www.linkedin.com/in/xabi-goity/" className="flex font-normal" target="_blank"><Linkedin className="mr-[5px]" />Linkedin</Link>
                         <Link href="https://github.com/Xabi08YT" className="flex font-normal" target="_blank"><Github className="mr-[5px]"/>Github</Link>
                         <Link href="mailto:xabigoity@gmail.com" className="flex font-normal" target="_blank"><Mail className="mr-[5px]"/> Email</Link>
                     </CardFooter>
                 </Card>
-                <Card className="w-fit p-[5px] pt-[15px] m-[15px] mt-[5.5vh] blurredSurface rounded-3xl">
+                <Card className="w-fit p-[5px] pt-[15px] m-[15px] mt-[5.5vh] blurredSurface rounded-3xl border-0">
                     <CardTitle className="text-center hidden md:flex flex-col"><Code2Icon className="self-center size-16"/> Mes langages de programmation</CardTitle>
                     <CardContent className="mb-0 pb-0 mt-[5px] text-white hidden md:block">
                         <iframe width="600" height="600"
@@ -36,7 +36,7 @@ export default function Home() {
                     </CardContent>
                     <CardTitle className="flex md:hidden text-center justify-center content-center">
                         <TriangleAlert className="mr-[5px] self-center" size="100"/>
-                        <p>Certaines informations n&apos;ont pu être affichée a cause de la taille de votre écran.</p>
+                        <p>Certaines informations n&apos;ont pu être affichées a cause de la taille de votre écran.</p>
                     </CardTitle>
                 </Card>
             </main>
