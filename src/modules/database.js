@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import {user} from "pg/lib/native";
 
 const prisma = new PrismaClient();
 
