@@ -30,7 +30,7 @@ export default function Navbar() {
         fetch("/api/v1/getAllLanguages").then(resp => resp.json()).then(data => setLangs(data));
     }, [])
     return (
-        <div className="text-white w-full h-full backdrop-blur">
+        <div className="text-white w-full h-full blurredSurface">
             <div className="hidden sm:flex justify-between">
                 <NavigationMenu className="w-screen text-white py-[5px] hidden sm:block">
                     <NavigationMenuList className="">
@@ -51,33 +51,33 @@ export default function Navbar() {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-                <NavigationMenu className="w-screen text-white py-[5px] hidden sm:block">
-                    <NavigationMenuList className="">
-                        <NavigationMenuItem className="">
-                            <Link href="/search" legacyBehavior passHref><NavigationMenuLink
-                                className={`${navigationMenuTriggerStyle()} blurred`}><SearchIcon
-                                className="mr-[5px]"/> Rechercher</NavigationMenuLink></Link>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem className="">
-                            <NavigationMenuTrigger className="align-top blurred"><Languages
-                                color="white" className="mr-[5px]"/> Langages</NavigationMenuTrigger>
-                            <NavigationMenuContent className="">
-                                {langs.length === 0 ? (
-                                    <NavigationMenuLink>Loading</NavigationMenuLink>) : langs.map((value) => {
-                                    let wrapper = chooseLanguage(value.shortCode);
-                                    return (<NavigationMenuItem key={value.id}>
-                                        <Button className={`${navigationMenuTriggerStyle()} text-white`}
-                                                onClick={wrapper}>
-                                            <Image
-                                                src={value.flagurl} alt={value.shortCode} width="32"
-                                                height="32"/> {value.name}
-                                        </Button>
-                                    </NavigationMenuItem>)
-                                })}
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                </NavigationMenu>
+                <div className="flex text-sm">
+                    <Link href="/search" className="flex py-[5px] mt-[7px] align-top"><SearchIcon
+                        className="mr-[5px]"/> <p className="mt-[3px]">Rechercher</p></Link>
+                    <NavigationMenu className="w-screen text-white py-[5px] hidden sm:block">
+                        <NavigationMenuList className="">
+                            <NavigationMenuItem className="">
+                                <NavigationMenuTrigger className="align-top blurred"><Languages
+                                    color="white" className="mr-[5px]"/> Langages</NavigationMenuTrigger>
+                                <NavigationMenuContent className="">
+                                    {langs.length === 0 ? (
+                                        <NavigationMenuLink>Loading</NavigationMenuLink>) : langs.map((value) => {
+                                        let wrapper = chooseLanguage(value.shortCode);
+                                        return (<NavigationMenuItem key={value.id}>
+                                            <Button className={`${navigationMenuTriggerStyle()} text-white`}
+                                                    onClick={wrapper}>
+                                                <Image
+                                                    src={value.flagurl} alt={value.shortCode} width="32"
+                                                    height="32"/> {value.name}
+                                            </Button>
+                                        </NavigationMenuItem>)
+                                    })}
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
+                    </NavigationMenu>
+
+                </div>
             </div>
             <div className="flex justify-between sm:hidden text-2xl p-[5px]">
                 <DropdownMenu className="burredSurface">
@@ -99,7 +99,8 @@ export default function Navbar() {
                                         <DropdownMenuItem>Loading...</DropdownMenuItem>) : langs.map((value) => {
                                         let wrapper = chooseLanguage(value.shortCode);
                                         return (<DropdownMenuItem key={value.id} onClick={wrapper}>
-                                            <Image src={value.flagurl} alt={value.shortCode} width="24" height="24"/> {value.name}
+                                            <Image src={value.flagurl} alt={value.shortCode} width="24"
+                                                   height="24"/> {value.name}
                                         </DropdownMenuItem>);
                                     })}
                                 </DropdownMenuSubContent>

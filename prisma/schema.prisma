@@ -54,7 +54,7 @@ model T_Languages_LNG {
   id        Int    @id @default(autoincrement())
   shortCode String @unique
   name      String
-  flagurl   String
+  flagurl   String @db.VarChar(512)
 
   T_Pages_IPG T_Pages_IPG[]
 
